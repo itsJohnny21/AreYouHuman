@@ -73,6 +73,7 @@ namespace MauiApp1
         private async void OnLoadCaptchaClicked(object sender, EventArgs e)
         {
             await LoadCaptcha();
+            EncryptedCaptcha.Text = "";
         }
 
         private async Task LoadCaptcha()
