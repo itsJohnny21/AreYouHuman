@@ -1,4 +1,11 @@
-﻿namespace MauiApp1
+﻿using System;
+using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+using Microsoft.Maui.Controls;
+
+namespace MauiApp1
 {
     public partial class MainPage : ContentPage
     {
