@@ -26,7 +26,7 @@ namespace MauiApp1
 
                 string xmlResponse = await client.GetStringAsync(randomStringApiUrl);
                 var doc = System.Xml.Linq.XDocument.Parse(xmlResponse);
-                string randomString = doc.Root.Value;
+                string randomString = doc?.Root.Value;
 
                 return randomString ?? "";
             }
@@ -35,6 +35,11 @@ namespace MauiApp1
                 await DisplayAlert("Error", "Could not get random string: " + ex.Message, "OK");
                 return "";
             }
+        }
+
+        private async Task OnLoadCaptchaClicked()
+        {
+            async LoadCaptcha();
         }
 
         private async Task LoadCaptcha()

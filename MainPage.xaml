@@ -6,7 +6,7 @@
     <StackLayout>
         <Image x:Name="CaptchaImage" WidthRequest="300" HeightRequest="300" />
 
-        <Button Text="Generate New Captcha" Clicked="OnLoadImageClicked"/>
+        <Button Text="Generate New Captcha" Clicked="OnLoadCaptchaClicked"/>
 
         <Label Text="Enter the text from the captcha" FontSize="30" />
         <Entry x:Name="UserInput" />
