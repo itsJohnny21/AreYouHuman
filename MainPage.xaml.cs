@@ -39,7 +39,7 @@ namespace MauiApp1
 
         private async void OnLoadCaptchaClicked(object sender, EventArgs e)
         {
-            async LoadCaptcha();
+            await LoadCaptcha();
         }
 
         private async Task LoadCaptcha()

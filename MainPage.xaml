@@ -10,6 +10,8 @@
 
         <Label Text="Enter the text from the captcha" FontSize="30" />
         <Entry x:Name="UserInput" />
+
+        <Button Text="Submit" Clicked="OnSubmitClicked" />
     </StackLayout>
 
 </ContentPage>
