@@ -1,20 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.MainPage">
+             x:Class="MauiApp1.MainPage"
+             BackgroundColor="#f5f5f5"
+             Padding="20">
 
-    <StackLayout>
-        <Button Text="Generate New Captcha" Clicked="OnLoadCaptchaClicked"/>
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
 
-        <Image x:Name="CaptchaImage" WidthRequest="300" HeightRequest="300" />
-        
-        <Button Text="Show Encrypted Captcha" Clicked="OnShowEncryptedClicked" />
-        <Label x:Name="EncryptedCaptcha" />
+            <Label Text="Captcha Verification"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#333" />
 
-        <Label Text="Enter the captcha above to prove you are human!" FontSize="21" />
-        <Entry x:Name="UserInput" Placeholder="Enter captcha here..." />
+            <Button Text="Generate Captcha"
+                    Clicked="OnLoadCaptchaClicked"
+                    BackgroundColor="#007ACC"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Padding="10,5" />
 
-        <Button Text="Submit" Clicked="OnSubmitClicked" />
-    </StackLayout>
+            <Frame Padding="10" HasShadow="True" CornerRadius="10" BackgroundColor="White">
+                <Image x:Name="CaptchaImage" WidthRequest="250" HeightRequest="250" />
+            </Frame>
+
+            <Button Text="Show Encrypted Captcha"
+                    Clicked="OnShowEncryptedClicked"
+                    BackgroundColor="#555"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Padding="10,5" />
+
+            <Label x:Name="EncryptedCaptcha"
+                   FontSize="14"
+                   TextColor="#777"
+                   HorizontalOptions="Center"
+                   LineBreakMode="WordWrap" />
+
+            <Label Text="Enter the captcha above to prove you are human:"
+                   FontSize="16"
+                   TextColor="#444"
+                   HorizontalOptions="Center" />
+
+            <Entry x:Name="UserInput"
+                   Placeholder="Type captcha here..."
+                   FontSize="16"
+                   BackgroundColor="White"
+                   Margin="0,0,0,10"
+                   HeightRequest="40"
+                   HorizontalOptions="FillAndExpand" />
+
+            <Button Text="Submit"
+                    Clicked="OnSubmitClicked"
+                    BackgroundColor="#28a745"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Padding="10,5" />
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>
