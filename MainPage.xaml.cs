@@ -65,6 +65,8 @@ namespace MauiApp1
             if (string.IsNullOrWhiteSpace(randomString))
                 return;
 
+            captchaString = randomString;
+
             try
             {
                 string captchaApiUrl =
