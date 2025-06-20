@@ -7,6 +7,9 @@
         <Button Text="Generate New Captcha" Clicked="OnLoadCaptchaClicked"/>
 
         <Image x:Name="CaptchaImage" WidthRequest="300" HeightRequest="300" />
+        
+        <Button Text="Show Encrypted Captcha" Clicked="OnShowEncryptedClicked" />
+        <Label x:Name="EncryptedCaptcha" />
 
         <Label Text="Enter the captcha above to prove you are human!" FontSize="21" />
         <Entry x:Name="UserInput" Placeholder="Enter captcha here..." />

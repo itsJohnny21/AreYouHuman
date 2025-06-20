@@ -54,6 +54,22 @@ namespace MauiApp1
             UserInput.Text = "";
         }
 
+        private async void OnShowEncryptedClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                string encryptApiUrl =
+                    $"https://venus.sod.asu.edu/WSRepository/Services/EncryptionRest/Service.svc/Encrypt?text={Uri.EscapeDataString(captchaString)}";
+
+                string jsonResponse = await client.GetStringAsync(encryptApiUrl);
+                EncryptedCaptcha = jsonResponse.Replace("\"", "");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", "Could not encrypt captcha: " + ex.Message, "OK");
+            }
+        }
+
         private async void OnLoadCaptchaClicked(object sender, EventArgs e)
         {
             await LoadCaptcha();
