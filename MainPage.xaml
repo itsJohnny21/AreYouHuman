@@ -4,12 +4,12 @@
              x:Class="MauiApp1.MainPage">
 
     <StackLayout>
-        <Image x:Name="CaptchaImage" WidthRequest="300" HeightRequest="300" />
-
         <Button Text="Generate New Captcha" Clicked="OnLoadCaptchaClicked"/>
 
-        <Label Text="Enter the text from the captcha" FontSize="30" />
-        <Entry x:Name="UserInput" />
+        <Image x:Name="CaptchaImage" WidthRequest="300" HeightRequest="300" />
+
+        <Label Text="Enter the captcha above to prove you are human!" FontSize="21" />
+        <Entry x:Name="UserInput" Placeholder="Enter captcha here..." />
 
         <Button Text="Submit" Clicked="OnSubmitClicked" />
     </StackLayout>

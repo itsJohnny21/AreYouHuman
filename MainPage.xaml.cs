@@ -10,6 +10,7 @@ namespace MauiApp1
     public partial class MainPage : ContentPage
     {
         private static readonly HttpClient client = new HttpClient();
+        private string captchaString;
 
         public MainPage()
         {
@@ -35,6 +36,22 @@ namespace MauiApp1
                 await DisplayAlert("Error", "Could not get random string: " + ex.Message, "OK");
                 return "";
             }
+        }
+
+        private async void OnSubmitClicked(object sender, EventArgs e)
+        {
+            string inputString = UserInput.Text;
+            if (inputString.Equals(captchaString))
+            {
+                await DisplayAlert("Result", "Howdy human!", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Result", "Beep boop beep boop.", "OK");
+            }
+
+            await LoadCaptcha();
+            UserInput.Text = "";
         }
 
         private async void OnLoadCaptchaClicked(object sender, EventArgs e)
