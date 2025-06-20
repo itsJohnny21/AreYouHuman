@@ -52,6 +52,7 @@ namespace MauiApp1
 
             await LoadCaptcha();
             UserInput.Text = "";
+            EncryptedCaptcha.Text = "";
         }
 
         private async void OnShowEncryptedClicked(object sender, EventArgs e)
