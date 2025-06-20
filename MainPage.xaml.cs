@@ -62,7 +62,7 @@ namespace MauiApp1
                     $"https://venus.sod.asu.edu/WSRepository/Services/EncryptionRest/Service.svc/Encrypt?text={Uri.EscapeDataString(captchaString)}";
 
                 string jsonResponse = await client.GetStringAsync(encryptApiUrl);
-                EncryptedCaptcha = jsonResponse.Replace("\"", "");
+                EncryptedCaptcha.Text = jsonResponse.Replace("\"", "");
             }
             catch (Exception ex)
             {
